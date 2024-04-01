@@ -92,13 +92,12 @@ def render_about_page():
 
         ### **Disclaimer**\n
         While the Malaria Detector App provides valuable insights based on advanced algorithms, it is not a substitute for professional medical advice or diagnosis. Users are encouraged to consult with qualified healthcare professionals for accurate diagnosis and treatment recommendations.
-         
-        ### **Features** 
-        - Upload an image of a blood sample for analysis.
-        - Receive instant feedback on the likelihood of malaria infection.
-        - Access additional information and resources for seeking medical assistance.        
+      
             """)
     st.write("#### Example Usage")
+    st.write('''
+             - Upload an image of a blood sample for analysis.
+             - Receive instant feedback on the likelihood of malaria infection.''')
 
     #Load example images
     image1 = Image.open("example_healthy.png")
