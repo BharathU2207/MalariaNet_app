@@ -5,11 +5,23 @@ import torch
 import torchvision.transforms as transforms 
 import torch.nn.functional as F 
 from model_utils import MalariaNet
+import requests
+from pathlib import Path
+import pickle 
+from gfile import download_model
 
-# Load the model and move it to cpu 
-model = joblib.load('joblib_Malarianet.joblib')
-model.to(torch.device('cpu'))
-model.eval() 
+@st.cache_resource
+def load_model():     
+    f_checkpoint = Path("joblib_Malarianet.joblib")
+    if not f_checkpoint.exists():
+        with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
+            download_model()
+    model = joblib.load('joblib_Malarianet.joblib')
+    model.to(torch.device('cpu'))
+    model.eval()
+    return model
+
+model = load_model() 
 
 # Defining image transformations 
 transform = transforms.Compose([
@@ -71,7 +83,7 @@ def render_home_page():
                         st.write("However should symptoms persist, please seek medical attention from a qualified healthcare professional, as they may be indicative of another illness. Take care and have a wonderful day!")
                     else: 
                         st.error('Malaria Detected.')
-                        st.write("Please consult a healthcare provider for further evaluation and treatment immedidately. Malaria is a serious illness that requires medical attention. In the meantime, ensure to rest and stay hydrated.")
+                        st.write("Please consult a healthcare provider for further evaluation and treatment immedidately. Malaria is a serious illness that requires medical attention. In the meantime, ensure you rest and stay hydrated.")
 
 def render_about_page(): 
     st.title("About page")
