@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from model_utils import MalariaNet
 
 # Load the model and move it to cpu 
-model = joblib.load('C:/Users/bhara/Desktop/Projects/Malaria_Net/joblib_Malarianet.joblib')
+model = joblib.load('joblib_Malarianet.joblib')
 model.to(torch.device('cpu'))
 model.eval() 
 
