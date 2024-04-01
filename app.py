@@ -5,9 +5,7 @@ import torch
 import torchvision.transforms as transforms 
 import torch.nn.functional as F 
 from model_utils import MalariaNet
-import requests
 from pathlib import Path
-import pickle 
 from gfile import download_model
 
 @st.cache_resource
@@ -56,7 +54,7 @@ def render_home_page():
     st.title("Malaria Detector App")
     st.markdown(
         '''
-    This application enables users to detect malaria infection in individuals by analyzing images of their blood samples. Leveraging deep learning, this model achieves an accuracy rate of <span style="color:#ff8000; font-weight:bold;">95.29%</span> in identifying malaria-infected samples.
+    This application enables users to detect malaria infection in individuals by analyzing images of their blood samples. Leveraging deep learning, this model achieves an accuracy rate of <span style="color:#ff8000; font-weight:bold;">96.59%</span> in identifying malaria-infected samples.
     ''', unsafe_allow_html=True
 
     )
@@ -88,7 +86,7 @@ def render_home_page():
 def render_about_page(): 
     st.title("About page")
     st.write("""
-        The Malaria Detector App is a tool designed to assist users in identifying potential cases of malaria using images of blood samples. Our app employs a deep learning algorithm with a **95.29%** accuracy to analyze these images and provide quick, preliminary assessments.
+        The Malaria Detector App is a tool designed to assist users in identifying potential cases of malaria using images of blood samples. Our app employs a deep learning algorithm with a **96.59%** accuracy to analyze these images and provide quick, preliminary assessments.
 
         The primary goal of the Malaria Detector App is to offer a convenient and accessible means for individuals to screen for malaria symptoms, particularly in regions where access to healthcare resources may be limited. This app makes leveraging advance technology accesible and empowers uses to take proactive steps towards their health and well-being.
 
