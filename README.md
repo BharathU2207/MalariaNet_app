@@ -1,2 +1,0 @@
-# MalariaNet_app
-This repository houses the code for a malaria detection application developed using deep learning techniques. The application allows users to upload images of blood samples to identify potential cases of malaria infection. It includes a trained model with a high accuracy rate of 96.7% in distinguishing infected and non-infected samples. The codebase comprises streamlined implementations of neural network architectures, data preprocessing techniques, and model evaluation strategies.
